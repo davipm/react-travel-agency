@@ -19,18 +19,48 @@
     }
   }
 
-  .nav {
-    width: 25px;
-    @include media("<=phone") {
-      width: 20px;
+  .nav-toggle {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include media("<=tablet") {
+      margin-right: 24px;
     }
 
-    span {
-      margin-bottom: 0.3rem;
-      background-color: $black;
-      height: 2px;
-      width: 100%;
-      display: block;
+    @include media("<=phone") {
+      width: 20px;
+      margin-right: 16px;
+    }
+
+    .hamburger-menu {
+      width: 25px;
+
+      span {
+        text-align: center;
+        margin-bottom: 0.3rem;
+        background-color: $black;
+        height: 2px;
+        width: 100%;
+        display: block;
+      }
+    }
+
+    .hamburger-menu-close {
+      position: absolute;
+      display: none;
+
+      svg {
+        @include media('<=tablet') {
+          width: 56px;
+        }
+
+        @include media('<=phone') {
+          width: 48px;
+        }
+      }
     }
   }
 }
