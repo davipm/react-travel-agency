@@ -1,10 +1,6 @@
 # Travel Agency
 
-Travel Agency project with animations
-
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Frontend application for travel agency using React and GSAP for animations.
 
 ### Prerequisites
 
@@ -12,13 +8,13 @@ Node.js installed
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* React.js
+* SASS
+* GSAP
 
 ## Authors
 
-* **Davi Pereira** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Davi Pereira**
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
