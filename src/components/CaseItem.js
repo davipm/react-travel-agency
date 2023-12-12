@@ -7,7 +7,7 @@ const CaseItem = ({ title, img, subtitle }) => (
       <h2>{title}</h2>
     </div>
     <div className="case-image">
-      <img src={require(`../assets/${img}.webp`)} alt={subtitle} />
+      <img src={img} alt={subtitle} />
     </div>
   </div>
 );

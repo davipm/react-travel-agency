@@ -1,6 +1,6 @@
 import React from 'react';
 
-function About(props) {
+export default function About() {
   return (
     <section>
       <div className="container">
@@ -11,5 +11,3 @@ function About(props) {
     </section>
   );
 }
-
-export default About;

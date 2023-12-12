@@ -1,4 +1,5 @@
 import React from "react";
+import { kyoto, rio, london } from '../assets'
 import { ReactComponent as CaseNext } from "../assets/arrow-right.svg";
 import { ReactComponent as CasePrev } from "../assets/arrow-left.svg";
 import CaseItem from "./CaseItem";
@@ -8,19 +9,19 @@ const caseStudies = [
     id: 1,
     subtitle: "Kyoto 京都",
     title: "One of the oldest cities in japan",
-    img: "kyoto",
+    img: kyoto,
   },
   {
     id: 2,
     subtitle: "Rio de Janeiro",
     title: "The former capital of Brazil",
-    img: "riodejaneiro",
+    img: rio,
   },
   {
     id: 3,
     subtitle: "London",
     title: "One of the capitals of the world",
-    img: "london",
+    img: london,
   },
 ];
 

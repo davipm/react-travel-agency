@@ -1,6 +1,6 @@
 import React from 'react';
 
-function CaseStudy() {
+export default function CaseStudy() {
   return (
     <section className="page">
       <div className="container">
@@ -11,5 +11,3 @@ function CaseStudy() {
     </section>
   );
 }
-
-export default CaseStudy;

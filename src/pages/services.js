@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Services() {
+export default function Services() {
   return (
     <section className="page">
       <div className="container">
@@ -11,5 +11,3 @@ function Services() {
     </section>
   );
 }
-
-export default Services;

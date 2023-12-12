@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Approach(props) {
+export default function Approach() {
   return (
     <section>
       <div className="container">
@@ -11,5 +11,3 @@ function Approach(props) {
     </section>
   );
 }
-
-export default Approach;
