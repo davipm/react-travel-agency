@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import gsap from "gsap";
 
@@ -20,41 +20,40 @@ const routes = [
 
 function debounce(fn, ms) {
   let timer;
-  return () => {
+  return (...args) => {
     clearTimeout(timer);
     timer = setTimeout(() => {
-      timer = null;
-      fn.apply(this, arguments);
+      fn.apply(this, args);
     }, ms);
   };
 }
 
 function App() {
-  const [dimensions, setDimensions] = useState(() => {
-    return {
-      width: window.innerWidth,
-      height: window.innerHeight,
-    };
+  const [dimensions, setDimensions] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
   });
 
-  useEffect(() => {
+  const handleResize = useCallback(() => {
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty("--vh", `${vh}px`);
+    setDimensions({
+      height: window.innerHeight,
+      width: window.innerWidth,
+    });
+  }, []);
 
-    // prevent flashing
+  useEffect(() => {
     gsap.to("body", { css: { visibility: "visible" } });
 
-    const debounceHandleSize = debounce(function handleResize() {
-      setDimensions({
-        height: window.innerHeight,
-        width: window.innerWidth,
-      });
-    }, 1000);
+    const debouncedHandleResize = debounce(handleResize, 1000);
+    window.addEventListener("resize", debouncedHandleResize);
+    handleResize();
 
-    window.addEventListener("resize", debounceHandleSize);
-
-    return () => window.removeEventListener("resize", debounceHandleSize);
-  }, []);
+    return () => {
+      window.removeEventListener("resize", debouncedHandleResize);
+    };
+  }, [handleResize]);
 
   return (
     <Router>
